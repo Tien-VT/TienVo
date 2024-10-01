@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.container-search {
+    display: flex;
+    flex-direction: column;
+    flex: 2; /* Độ rộng của phần tìm kiếm */
+    background-color: rgb(93, 235, 223);
+    max-height: 100%;
+    padding: 20px;
+}
+
+.label {
+    margin-bottom: 7px; /* Khoảng cách dưới mỗi nhãn */
+}
+
+.select {
+    margin-bottom: 7px; /* Khoảng cách dưới mỗi lựa chọn */
+}
+
+.container-body {
+    flex: 8; /* Độ rộng của phần hiển thị bản đồ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner {
+    position: relative;
+    height: 500px;
+    width: 500px;
+}
+
+.svg {
+    height: 500px;
+    width: 500px;
+}
+
+.point {
+    position: absolute;
+    width: 3px; /* Đường kính của dấu chấm */
+    height: 3px;
+    background-color: red; /* Màu sắc của dấu chấm */
+    border-radius: 50%; /* Tạo hình tròn */
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    cursor: pointer;
+}
+
+.point2 {
+    position: absolute;
+    width: 6px; /* Đường kính của dấu chấm */
+    height: 6px;
+    background-color: rgb(88, 172, 241); /* Màu sắc của dấu chấm cho đường đi */
+    border-radius: 50%; /* Tạo hình tròn */
+}
+
+.lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3; /* Để đường vẽ nằm dưới các điểm */
+    cursor: pointer;
+}
+
+.line {
+    stroke: red; /* Màu sắc của đường */
+    stroke-width: 2; /* Độ dày của đường */
+}
+
+.container path {
+    fill: rgba(185, 241, 229, 0.918);
+    stroke: #8B4513;
+    stroke-width: 1px;
+    cursor: pointer; /* Con trỏ khi hover */
+}
+
+.label2 {
+    position: absolute;
+    left: 20px;
+    top: -4px;
+    font-size: 12px; /* Kích thước chữ của nhãn */
+    display: none; /* Ẩn nhãn mặc định */
+    width: 80px;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.8); /* Nền trắng cho nhãn */
+    border-radius: 4px; /* Bo góc cho nhãn */
+    padding: 2px; /* Khoảng cách bên trong nhãn */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Đổ bóng cho nhãn */
+}
+
+.point:hover .label2 {
+    display: block; /* Hiện nhãn khi hover */
+}
+
+/* Thêm các kiểu cho các nút A* và Nhánh cận */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 15px;
+    background-color: rgb(88, 172, 241);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: rgb(66, 135, 191); /* Hiệu ứng hover cho nút */
+}
+.container-aStarSearch {
+    margin-top: 20px;
+}
+.branchAndBound{
+    margin-top: 10px;
+}
+.branchAndBound{
+    cursor: pointer;
+}
+.aStarSearch{
+    cursor: pointer;
+}
